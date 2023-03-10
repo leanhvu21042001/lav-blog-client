@@ -1,0 +1,2 @@
+const DEBOUNCE_WAIT = 500;
+export { DEBOUNCE_WAIT };
