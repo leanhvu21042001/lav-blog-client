@@ -5,11 +5,6 @@ import { Input, InputGroup, InputLeftElement, Box } from '@chakra-ui/react';
 import { debounce } from 'lodash';
 import { DEBOUNCE_WAIT } from 'src/constants';
 
-export interface ISearchResult {
-  name: string;
-  description: string;
-}
-
 const AnimatedInputSearch: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

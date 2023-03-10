@@ -9,19 +9,19 @@ import { AnimatedInputSearch } from '../Inputs';
 import { Divider, Heading, List, ListItem } from '@chakra-ui/react';
 import string from 'src/helpers/string';
 
-interface IResultSearch {
-  tag: string;
+export interface IResultSearch {
+  href: string;
   title: string;
 }
 
 const MAX_SEARCH_RESULT = 5;
 
 const ResultSearch: React.FC<{ data: IResultSearch[] }> = ({ data }) => {
-  const listItem = data.slice(0, MAX_SEARCH_RESULT).map(({ tag, title }) => (
+  const listItem = data.slice(0, MAX_SEARCH_RESULT).map(({ href, title }) => (
     <>
       <ListItem>
         <Heading as="h4" size="sm" paddingY={4}>
-          <Link to={tag}>{string.makeShort(title, 6)}</Link>
+          <Link to={href}>{string.makeShort(title, 6)}</Link>
         </Heading>
       </ListItem>
       <Divider orientation="horizontal" />
@@ -31,7 +31,10 @@ const ResultSearch: React.FC<{ data: IResultSearch[] }> = ({ data }) => {
   return <List w="full">{listItem}</List>;
 };
 
-const ModalSearch: React.FC<{ onSearch: (query: string) => void; posts: IResultSearch[] }> = ({ onSearch, posts }) => {
+const ModalSearch: React.FC<{
+  onSearch: (query: string) => void;
+  posts: IResultSearch[];
+}> = ({ onSearch, posts }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>

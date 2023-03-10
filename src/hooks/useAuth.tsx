@@ -5,6 +5,7 @@ import { useLocalStorage } from 'src/helpers/useLocalStorage';
 interface IAuth {
   user?: null;
 }
+
 const AuthContext = createContext<IAuth>({
   user: null,
 });

@@ -3,8 +3,12 @@ import React from 'react';
 import { AbsoluteCenter, Box, Heading, Text } from '@chakra-ui/react';
 import { useRouteError } from 'react-router-dom';
 
+interface IError {
+  statusText: string;
+  message: string;
+}
 const PageNotFound: React.FC = () => {
-  const error: any = useRouteError();
+  const error = useRouteError() as IError;
 
   return (
     <Box position="relative" h="100vh">

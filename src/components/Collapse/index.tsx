@@ -5,10 +5,10 @@ import { useDisclosure } from '@chakra-ui/hooks';
 import { Box } from '@chakra-ui/layout';
 import { Collapse as ChakraUICollapse } from '@chakra-ui/transition';
 
-export const Collapse: React.FC<{ children: React.ReactNode; buttonContent?: string }> = ({
-  children,
-  buttonContent = 'Click Me',
-}) => {
+export const Collapse: React.FC<{
+  children: React.ReactNode;
+  buttonContent?: string;
+}> = ({ children, buttonContent = 'Click Me' }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (

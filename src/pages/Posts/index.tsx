@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 
-import ListPosts, { IPostItem } from 'src/components/ListPosts';
-import ModalSearch from 'src/components/Modals/ModalSearch';
+import ListPosts from 'src/components/ListPosts';
+import ModalSearch, { IResultSearch } from 'src/components/Modals/ModalSearch';
 import { Box } from '@chakra-ui/react';
 
-import { posts } from './data.sample';
+import { posts } from './posts.sampledata';
+import { links } from 'src/routes/router';
 
 const Posts: React.FC = () => {
-  const [data, setData] = useState<IPostItem[]>(posts);
+  const [data, setData] = useState<IResultSearch[]>([]);
 
   const handleSearch = (query: string) => {
-    const result = posts.filter(({ title }) => title.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
-
-    console.log(result);
+    const result: IResultSearch[] = posts
+      .filter(({ title }) => title.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
+      .map((post) => ({
+        ...post,
+        href: links.root.post_detail.extend_path(post.id, post.slug),
+      }));
 
     setData(result);
   };

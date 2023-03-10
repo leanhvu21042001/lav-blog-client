@@ -1,5 +1,5 @@
-const makeShort = (value: string, max: number) => {
-  const words = value.split(' ');
+const makeShort = (value: string | number, max: number) => {
+  const words = String(value).split(' ');
 
   if (words.length < max) {
     return value;

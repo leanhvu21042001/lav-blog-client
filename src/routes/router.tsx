@@ -8,6 +8,7 @@ import Login from 'src/pages/Login';
 import PageNotFound from 'src/pages/PageNotFound';
 import Posts from 'src/pages/Posts';
 import Register from 'src/pages/Register';
+import PostDetail from 'src/pages/PostDetail';
 
 export const links = {
   root: {
@@ -24,6 +25,11 @@ export const links = {
       path: 'posts',
       element: <Posts />,
       name: 'Posts',
+    },
+    post_detail: {
+      extend_path: (id: number | string, slug: string) => `/post/${id}/${slug}`,
+      path: '/post/:id/:slug',
+      element: <PostDetail />,
     },
     register: {
       path: 'register',
@@ -58,6 +64,10 @@ const router = createBrowserRouter([
         path: links.root.posts.path,
         element: links.root.posts.element,
       },
+      {
+        path: links.root.post_detail.path,
+        element: links.root.post_detail.element,
+      },
     ],
   },
   {
@@ -67,10 +77,6 @@ const router = createBrowserRouter([
   {
     path: links.root.register.path,
     element: links.root.register.element,
-  },
-  {
-    path: links.notFound.path,
-    element: links.notFound.element,
   },
 ]);
 
