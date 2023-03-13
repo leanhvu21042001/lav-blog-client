@@ -18,6 +18,18 @@ export interface IPostItem {
 
 const TAG_COLORS = ['#93CFE9', '#45A48C', '#91619D', '#B06C59', '#cc4860'];
 
+export const PostTags: React.FC<{ tag: string }> = ({ tag }) => {
+  const tagsMapped = tag.split(',').map((elm) => {
+    const color = TAG_COLORS[random.getRandomIntInclusive(0, 3)];
+    return (
+      <Tag key={elm} size="md" variant="solid" bg={color} color="#fff" mr={3}>
+        <TagLabel>{elm}</TagLabel>
+      </Tag>
+    );
+  });
+  return <>{tagsMapped}</>;
+};
+
 export const PostItem: React.FC<IPostItem> = ({ id, title = '', content = '', tag = '', slug = '' }) => (
   <Card align="center" mb={10}>
     <CardHeader>
@@ -26,14 +38,7 @@ export const PostItem: React.FC<IPostItem> = ({ id, title = '', content = '', ta
       </Heading>
 
       <Center>
-        {tag.split(',').map((elm) => {
-          const color = TAG_COLORS[random.getRandomIntInclusive(0, 3)];
-          return (
-            <Tag key={elm} size="md" variant="solid" bg={color} color="#fff" mr={3}>
-              <TagLabel>{elm}</TagLabel>
-            </Tag>
-          );
-        })}
+        <PostTags tag={tag} />
       </Center>
     </CardHeader>
     <CardBody>

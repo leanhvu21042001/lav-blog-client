@@ -1,11 +1,12 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 
-import { IPostItem } from 'src/components';
+import { IPostItem, PostTags } from 'src/components';
 
 import { posts } from '../Posts/posts.sampledata';
+
 const PostDetail = () => {
   const params = useParams();
   const postId = params?.id;
@@ -37,8 +38,10 @@ const PostDetail = () => {
     <Box id={post?.id}>
       <Heading as="h1">Hello</Heading>
       <Heading as="h2">{post?.title}</Heading>
-      <Text>{post?.tag}</Text>
-      <Text>{post?.content}</Text>
+      <PostTags tag={post?.tag} />
+      <Container maxW="container.md" as="main" mt="20">
+        <Text>{post?.content}</Text>
+      </Container>
     </Box>
   );
 };
