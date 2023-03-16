@@ -67,6 +67,11 @@
 <!-- - Start build: `yarn start` -->
 - Start Development: `yarn start`
 
+## VSCODE
+
+- Install extensions for project
+  ![alt](./docs/images/vscode-extensions.png)
+
 ## Whose
 
 ```
