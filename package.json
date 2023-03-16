@@ -29,11 +29,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "prepare": "husky install",
+    "precommit": "npm run lint:fix",
+    "prepush": "npm run lint",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:fix": "eslint --fix ."
+    "lint": "eslint \"{src,test}/**/*{.js,.jsx,.tsx,.ts}\"",
+    "lint:fix": "eslint \"{src,test}/**/*{.js,.jsx,.tsx,.ts}\" --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +64,8 @@
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "prettier": "^2.8.4"
   }
 }
