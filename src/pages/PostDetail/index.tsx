@@ -14,7 +14,7 @@ const PostDetail = () => {
     id: '',
     content: '',
     title: '',
-    tag: '',
+    tags: '',
     slug: '',
   });
 
@@ -38,7 +38,7 @@ const PostDetail = () => {
     <Box id={post?.id}>
       <Heading as="h1">Hello</Heading>
       <Heading as="h2">{post?.title}</Heading>
-      <PostTags tag={post?.tag} />
+      <PostTags tags={post?.tags} />
       <Container maxW="container.md" as="main" mt="20">
         <Text>{post?.content}</Text>
       </Container>
