@@ -1,4 +1,4 @@
-import { IPostItem } from 'src/components';
+import { IPostItem } from 'src/types/post';
 
 export const posts: IPostItem[] = [
   {

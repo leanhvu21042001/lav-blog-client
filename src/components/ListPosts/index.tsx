@@ -6,15 +6,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import string from 'src/helpers/string';
 import { links } from 'src/routes/router';
+import { IPostItem } from 'src/types/post';
 import { random } from 'src/utils';
-
-export interface IPostItem {
-  id: string;
-  title: string;
-  content: string;
-  tags: string;
-  slug: string;
-}
 
 const TAG_COLORS = ['#93CFE9', '#45A48C', '#91619D', '#B06C59', '#cc4860'];
 

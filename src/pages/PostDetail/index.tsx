@@ -1,29 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { useParams } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
 
-import { IPostItem, PostTags } from 'src/components';
-
-import { posts } from '../Posts/posts.sampledata';
+import PostService from 'src/services/post';
+import { PostTags } from 'src/components';
+import { IPostItem } from 'src/types/post';
 
 const PostDetail = () => {
   const params = useParams();
-  const postId = params?.id;
-  const [post, setPost] = useState<IPostItem | undefined>({
-    id: '',
-    content: '',
-    title: '',
-    tags: '',
-    slug: '',
-  });
-
-  useEffect(() => {
-    if (postId) {
-      const postFound: IPostItem | undefined = posts.find((post) => post.id === postId);
-      setPost(postFound);
-    }
-  }, [postId]);
+  const postId = params?.id as string;
+  const { data: post } = useQuery<IPostItem>(['get-one-post'], () => PostService.getOne(postId));
 
   return !post?.id ? (
     <Box>
