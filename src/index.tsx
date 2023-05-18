@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
-import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
-import router from 'src/routes/router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouterCustom } from './routes/router';
+// import { router } from './routes/router';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -15,7 +16,9 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ChakraProvider>
-        <RouterProvider router={router} />
+        {/* <RouterProvider router={router} /> */}
+
+        <BrowserRouterCustom />
       </ChakraProvider>
     </QueryClientProvider>
   </React.StrictMode>,

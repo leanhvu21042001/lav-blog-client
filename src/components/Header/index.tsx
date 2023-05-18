@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { Breadcrumb, BreadcrumbItem, Container, Flex } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Container, Flex } from '@chakra-ui/react';
 
 import { LogoHeader } from 'src/components/Logos';
+import { links } from '../../routes/router';
 
-const Header: React.FC = () => (
-  <Container maxW="container.md" as="header">
+const Header = () => (
+  <Container maxW="container.md" my={5} as="header">
     <Flex
       backgroundColor="rgba(255, 255, 255, 0.8)"
       backdropFilter="saturate(180%) blur(5px)"
@@ -18,19 +19,19 @@ const Header: React.FC = () => (
 
       <Breadcrumb spacing="8px" separator="">
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">
-            <NavLink to="/">Home</NavLink>
-          </BreadcrumbLink>
+          <NavLink to={links.root.portfolio.path}>{links.root.portfolio.name}</NavLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">
-            <NavLink to="posts">Posts</NavLink>
-          </BreadcrumbLink>
+          <NavLink to={links.root.home.path}>{links.root.home.name}</NavLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem>
+          <NavLink to={links.root.posts.path}>{links.root.posts.name}</NavLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href="#">About</BreadcrumbLink>
+          <NavLink to="#!">About</NavLink>
         </BreadcrumbItem>
       </Breadcrumb>
     </Flex>
