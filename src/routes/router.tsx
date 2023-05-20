@@ -5,12 +5,12 @@ import { BrowserRouter, createBrowserRouter, Route, Routes, useLocation } from '
 
 import { Layout } from 'src/components/Layout';
 
-import Home from 'src/pages/Home';
 import Login from 'src/pages/Login';
 import PageNotFound from 'src/pages/PageNotFound';
 import Portfolio from 'src/pages/Portfolio';
 import PostDetail from 'src/pages/PostDetail';
 import Posts from 'src/pages/Posts';
+import Projects from 'src/pages/Projects';
 import Register from 'src/pages/Register';
 
 export const links = {
@@ -23,15 +23,15 @@ export const links = {
       element: <Portfolio />,
       name: 'Portfolio',
     },
-    home: {
-      path: '/home',
-      element: <Home />,
-      name: 'Home',
+    projects: {
+      path: '/projects',
+      element: <Projects />,
+      name: 'Projects',
     },
-    posts: {
-      path: 'posts',
+    blogs: {
+      path: 'blogs',
       element: <Posts />,
-      name: 'Posts',
+      name: 'Blogs',
     },
     post_detail: {
       extend_path: (id: number | string, slug: string) => `/post/${id}/${slug}`,
@@ -68,12 +68,12 @@ export const router = createBrowserRouter([
         element: links.root.portfolio.element,
       },
       {
-        path: links.root.home.path,
-        element: links.root.home.element,
+        path: links.root.projects.path,
+        element: links.root.projects.element,
       },
       {
-        path: links.root.posts.path,
-        element: links.root.posts.element,
+        path: links.root.blogs.path,
+        element: links.root.blogs.element,
       },
       {
         path: links.root.post_detail.path,
@@ -107,8 +107,8 @@ export const RoutesCustom = () => {
       <Routes key={location.pathname} location={location}>
         <Route path="/" element={<Layout />}>
           <Route path={links.root.portfolio.path} element={<Portfolio />} />
-          <Route path={links.root.home.path} element={<Home />} />
-          <Route path={links.root.posts.path} element={<Posts />} />
+          <Route path={links.root.projects.path} element={<Projects />} />
+          <Route path={links.root.blogs.path} element={<Posts />} />
           <Route path={links.root.post_detail.path} element={<PostDetail />} />
           <Route path={links.root.login.path} element={<Login />} />
           <Route path={links.root.register.path} element={<Register />} />
