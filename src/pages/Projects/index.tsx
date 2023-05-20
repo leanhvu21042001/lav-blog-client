@@ -3,7 +3,7 @@ import React from 'react';
 
 import Typewriter from 'src/components/Typewriter';
 
-const Home: React.FC = () => {
+const Projects: React.FC = () => {
   return (
     <div>
       <Heading as="h1" size="2xl" mb="10">
@@ -19,4 +19,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Projects;

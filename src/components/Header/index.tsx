@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { Breadcrumb, BreadcrumbItem, Container, Flex } from '@chakra-ui/react';
-import { NavLink } from 'react-router-dom';
+import { Container, Flex } from '@chakra-ui/react';
 
 import { LogoHeader } from 'src/components/Logos';
-import { links } from '../../routes/router';
+import { Menu } from '../Menu';
 
 const Header = () => (
   <Container maxW="container.md" my={5} as="header">
@@ -14,26 +13,13 @@ const Header = () => (
       w="100%"
       justifyContent="space-between"
       alignItems="center"
+      fontWeight="bold"
+      textTransform="uppercase"
+      gap={5}
     >
       <LogoHeader />
 
-      <Breadcrumb spacing="8px" separator="">
-        <BreadcrumbItem>
-          <NavLink to={links.root.portfolio.path}>{links.root.portfolio.name}</NavLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <NavLink to={links.root.home.path}>{links.root.home.name}</NavLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <NavLink to={links.root.posts.path}>{links.root.posts.name}</NavLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem isCurrentPage>
-          <NavLink to="#!">About</NavLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
+      <Menu />
     </Flex>
   </Container>
 );
