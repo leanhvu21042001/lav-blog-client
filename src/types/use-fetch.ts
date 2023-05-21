@@ -3,5 +3,6 @@ export interface QueryResponse<T> {
   error: unknown | string | object | undefined;
   isLoading: boolean;
   isFetching: boolean;
+  isFetched: boolean;
   status: string;
 }

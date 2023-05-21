@@ -1,19 +1,23 @@
 import React from 'react';
 
+import { Box, Container, Heading, Spinner, Text } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { Box, Container, Heading, Text } from '@chakra-ui/react';
 
-import PostService from 'src/services/post';
 import { PostTags } from 'src/components';
-import { IPostItem } from 'src/types/post';
+import { useGetPostBySlug } from 'src/queries/post';
+import { checkData } from 'src/utils';
 
 const PostDetail = () => {
   const params = useParams();
-  const postId = params?.id as string;
-  const { data: post } = useQuery<IPostItem>(['get-one-post'], () => PostService.getOne(postId));
+  const slug = params.slug as string;
 
-  return !post?.id ? (
+  const { data: post, isLoading } = useGetPostBySlug(slug);
+
+  if (isLoading) {
+    return <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />;
+  }
+
+  return checkData.isEmptyData(post) ? (
     <Box>
       <Heading as="h1" size="2xl">
         Post unavailable!

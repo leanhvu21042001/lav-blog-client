@@ -12,6 +12,12 @@ class PostService {
     const response = await request.get(endpoint);
     return response.data?.data ?? {};
   }
+
+  async getOneBySlug(slug: string) {
+    const endpoint = `/post/${slug}/slug`;
+    const response = await request.get(endpoint);
+    return response.data?.data ?? {};
+  }
 }
 
 export default new PostService();

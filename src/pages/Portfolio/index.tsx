@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Grid, GridItem, Image, Text, Button, Tooltip } from '@chakra-ui/react';
+import { Box, Button, Grid, GridItem, Image, Text, Tooltip } from '@chakra-ui/react';
 
 import { Link } from 'react-router-dom';
 import authorPortfolio from 'src/assets/images/portfolio/author-portfolio.png';

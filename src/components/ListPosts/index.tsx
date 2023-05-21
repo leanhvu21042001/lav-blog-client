@@ -23,7 +23,7 @@ export const PostTags: React.FC<{ tags: string }> = ({ tags }) => {
   return <>{tagsMapped}</>;
 };
 
-export const PostItem: React.FC<IPostItem> = ({ id, title = '', content = '', tags = '', slug = '' }) => (
+export const PostItem: React.FC<IPostItem> = ({ title = '', content = '', tags = '', slug = '' }) => (
   <Card align="center" mb={10}>
     <CardHeader>
       <Heading size="md" as="h2" mb={5}>
@@ -39,7 +39,7 @@ export const PostItem: React.FC<IPostItem> = ({ id, title = '', content = '', ta
     </CardBody>
     <CardFooter>
       <Button colorScheme="blue">
-        <Link to={links.root.post_detail.extend_path(id, slug)}>See more...</Link>
+        <Link to={links.root.post_detail.extend_path(slug)}>See more...</Link>
       </Button>
     </CardFooter>
   </Card>
