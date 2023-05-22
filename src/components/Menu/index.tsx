@@ -1,26 +1,46 @@
 import React from 'react';
 
+import { Breadcrumb, BreadcrumbItem, Button, Image, useColorMode } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem } from '@chakra-ui/react';
 
-import { links } from '../../routes/router';
+import dark from 'src/assets/images/header/dark.svg';
+import light from 'src/assets/images/header/light.svg';
+import { links } from 'src/routes/router';
 
-export const Menu = () => (
-  <Breadcrumb spacing="8px" separator="">
-    <BreadcrumbItem>
-      <NavLink to={links.root.portfolio.path}>{links.root.portfolio.name}</NavLink>
-    </BreadcrumbItem>
+export const Menu = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
 
-    <BreadcrumbItem>
-      <NavLink to={links.root.projects.path}>{links.root.projects.name}</NavLink>
-    </BreadcrumbItem>
+  return (
+    <Breadcrumb spacing="8px" separator="">
+      <BreadcrumbItem>
+        <Button variant="ghost">
+          <NavLink to={links.root.portfolio.path}>{links.root.portfolio.name}</NavLink>
+        </Button>
+      </BreadcrumbItem>
 
-    <BreadcrumbItem>
-      <NavLink to={links.root.blogs.path}>{links.root.blogs.name}</NavLink>
-    </BreadcrumbItem>
+      <BreadcrumbItem>
+        <Button variant="ghost">
+          <NavLink to={links.root.projects.path}>{links.root.projects.name}</NavLink>
+        </Button>
+      </BreadcrumbItem>
 
-    <BreadcrumbItem isCurrentPage>
-      <NavLink to="#!">About</NavLink>
-    </BreadcrumbItem>
-  </Breadcrumb>
-);
+      <BreadcrumbItem>
+        <Button variant="ghost">
+          <NavLink to={links.root.blogs.path}>{links.root.blogs.name}</NavLink>
+        </Button>
+      </BreadcrumbItem>
+
+      <BreadcrumbItem>
+        <Button variant="ghost">
+          <NavLink to="#!">About</NavLink>
+        </Button>
+      </BreadcrumbItem>
+
+      <BreadcrumbItem>
+        <Button onClick={toggleColorMode} variant="ghost">
+          {colorMode === 'light' ? <Image src={dark} /> : <Image src={light} />}
+        </Button>
+      </BreadcrumbItem>
+    </Breadcrumb>
+  );
+};

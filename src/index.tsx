@@ -6,6 +6,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouterCustom } from './routes/router';
+import theme from './theme';
 // import { router } from './routes/router';
 
 // Create a client
@@ -15,9 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ChakraProvider>
-        {/* <RouterProvider router={router} /> */}
-
+      <ChakraProvider theme={theme}>
         <BrowserRouterCustom />
       </ChakraProvider>
     </QueryClientProvider>
