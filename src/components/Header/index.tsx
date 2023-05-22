@@ -8,8 +8,6 @@ import { Menu } from '../Menu';
 const Header = () => (
   <Container maxW="container.md" my={5} as="header">
     <Flex
-      backgroundColor="rgba(255, 255, 255, 0.8)"
-      backdropFilter="saturate(180%) blur(5px)"
       w="100%"
       justifyContent="space-between"
       alignItems="center"

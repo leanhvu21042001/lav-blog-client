@@ -24,7 +24,7 @@ const Portfolio: React.FC = () => {
     <React.Fragment>
       <Grid templateColumns="3fr 3fr" gap={10}>
         <GridItem>
-          <Image src={authorPortfolio} />
+          <Image borderRadius={25} src={authorPortfolio} />
         </GridItem>
         <GridItem fontWeight="bold" mt={5}>
           <Box fontSize="36px">
