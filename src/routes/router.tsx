@@ -34,7 +34,7 @@ export const links = {
       name: 'Blogs',
     },
     post_detail: {
-      extend_path: (slug: string) => `blogs/post/${slug}`,
+      extend_path: (slug: string) => `/blogs/post/${slug}`,
       path: '/blogs/post/:slug',
       element: <PostDetail />,
     },
