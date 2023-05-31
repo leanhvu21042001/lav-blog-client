@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Box, Container, Heading, Spinner, Text } from '@chakra-ui/react';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 
 import { PostTags } from 'src/components';
+import SpinnerBox from 'src/components/SpinnerBox';
 import { useGetPostBySlug } from 'src/queries/post';
 import { checkData } from 'src/utils';
 
@@ -11,11 +12,9 @@ const PostDetail = () => {
   const params = useParams();
   const slug = params.slug as string;
 
-  const { data: post, isLoading } = useGetPostBySlug(slug);
+  const { data: post, isFetching } = useGetPostBySlug(slug);
 
-  if (isLoading) {
-    return <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />;
-  }
+  if (isFetching) return <SpinnerBox />;
 
   return checkData.isEmptyData(post) ? (
     <Box>
