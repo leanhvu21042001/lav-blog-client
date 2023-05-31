@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
-import { Box, Spinner } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+
 import ListPosts from 'src/components/ListPosts';
+import SpinnerBox from 'src/components/SpinnerBox';
 import ModalSearch, { IResultSearch } from 'src/components/Modals/ModalSearch';
 
 import { useGetPosts } from 'src/queries/post';
@@ -11,7 +13,7 @@ import { checkData } from 'src/utils';
 const Posts: React.FC = () => {
   const [dataSearch, setDataSearch] = useState<IResultSearch[]>([]);
 
-  const { data: posts, isLoading } = useGetPosts();
+  const { data: posts, isFetching } = useGetPosts();
 
   const handleSearch = (query: string) => {
     const result: IResultSearch[] = posts
@@ -24,9 +26,7 @@ const Posts: React.FC = () => {
     setDataSearch(result);
   };
 
-  if (isLoading) {
-    return <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />;
-  }
+  if (isFetching) return <SpinnerBox />;
 
   return (
     <>
