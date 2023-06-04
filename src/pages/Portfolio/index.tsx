@@ -14,6 +14,8 @@ import react from 'src/assets/images/technical/react.svg';
 import sass from 'src/assets/images/technical/sass.svg';
 
 import nodejs from 'src/assets/images/technical/nodejs.svg';
+import { SendMail } from 'src/components/Modals';
+import Typewriter from 'src/components/Typewriter';
 // import bootstrap from 'src/assets/images/technical/bootstrap.svg';
 // import laravel from 'src/assets/images/technical/laravel.svg';
 // import nestjs from 'src/assets/images/technical/nestjs.svg';
@@ -28,15 +30,17 @@ const Portfolio: React.FC = () => {
         </GridItem>
         <GridItem fontWeight="bold" mt={5}>
           <Box fontSize="36px">
-            <Text as="span">Hi, I&apos;m </Text>
+            <Text as="span">
+              <Typewriter text="Hi, I'm " delay={1} />
+            </Text>
             <Text as="span" color="#BD6161">
-              Raymond
+              <Typewriter text="Raymond" delay={1} />
             </Text>
           </Box>
-          <Text color="#BD6161" fontSize="26px">
-            Front-End Web Developer
-          </Text>
 
+          <Text color="#BD6161" fontSize="26px">
+            <Typewriter text="Front-End Web Developer" delay={1} />
+          </Text>
           {/* Social Links */}
           <Box display="flex" gap={5} mt={10}>
             <Tooltip label="Go to LinkedIn">
@@ -70,19 +74,7 @@ const Portfolio: React.FC = () => {
         </GridItem>
       </Grid>
 
-      <Tooltip label="Send mail">
-        <Button
-          mt={5}
-          backgroundColor="#BD6161"
-          color="#fff"
-          _hover={{
-            background: 'white',
-            color: 'teal.500',
-          }}
-        >
-          Contact me
-        </Button>
-      </Tooltip>
+      <SendMail />
 
       <Tooltip label="Download CV">
         <Button
@@ -95,7 +87,9 @@ const Portfolio: React.FC = () => {
             color: 'teal.500',
           }}
         >
-          Curriculum Vitae
+          <Link to="/CurriculumVitae_LeAnhVu.pdf" target="_blank">
+            Curriculum Vitae
+          </Link>
         </Button>
       </Tooltip>
     </React.Fragment>
