@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import { BrowserRouter } from 'react-router-dom';
 
 import { ChakraProvider } from '@chakra-ui/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouterCustom } from './routes/router';
 import theme from './theme';
-// import { router } from './routes/router';
 
 // Create a client
 const queryClient = new QueryClient();

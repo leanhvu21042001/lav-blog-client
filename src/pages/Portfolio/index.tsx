@@ -24,11 +24,17 @@ import Typewriter from 'src/components/Typewriter';
 const Portfolio: React.FC = () => {
   return (
     <React.Fragment>
-      <Grid templateColumns="3fr 3fr" gap={10}>
+      <Grid
+        templateColumns={{ lg: '3fr 3fr', sm: '1fr' }}
+        gap={10}
+        margin={{ sm: 'auto' }}
+        width={{ sm: 'fit-content' }}
+        textAlign={{ sm: 'center' }}
+      >
         <GridItem>
           <Image borderRadius={25} src={authorPortfolio} />
         </GridItem>
-        <GridItem fontWeight="bold" mt={5}>
+        <GridItem fontWeight="bold" mt={5} justifyContent={{ sm: 'center' }}>
           <Box fontSize="36px">
             <Text as="span">
               <Typewriter text="Hi, I'm " delay={1} />
@@ -42,7 +48,7 @@ const Portfolio: React.FC = () => {
             <Typewriter text="Front-End Web Developer" delay={1} />
           </Text>
           {/* Social Links */}
-          <Box display="flex" gap={5} mt={10}>
+          <Box display="flex" gap={5} mt={10} justifyContent={{ sm: 'center' }}>
             <Tooltip label="Go to LinkedIn">
               <Link to="https://www.linkedin.com/in/lavdev/" target="_blank">
                 <Image src={linkIn} />
@@ -74,24 +80,26 @@ const Portfolio: React.FC = () => {
         </GridItem>
       </Grid>
 
-      <SendMail />
+      <Box margin={{ sm: 'auto', lg: '0' }} width={{ sm: 'fit-content' }}>
+        <SendMail />
 
-      <Tooltip label="Download CV">
-        <Button
-          mt={5}
-          ml={2}
-          backgroundColor="#BD6161"
-          color="#fff"
-          _hover={{
-            background: 'white',
-            color: 'teal.500',
-          }}
-        >
-          <Link to="/CurriculumVitae_LeAnhVu.pdf" target="_blank">
-            Curriculum Vitae
-          </Link>
-        </Button>
-      </Tooltip>
+        <Tooltip label="Download CV">
+          <Button
+            mt={5}
+            ml={2}
+            backgroundColor="#BD6161"
+            color="#fff"
+            _hover={{
+              background: 'white',
+              color: 'teal.500',
+            }}
+          >
+            <Link to="/CurriculumVitae_LeAnhVu.pdf" target="_blank">
+              Curriculum Vitae
+            </Link>
+          </Button>
+        </Tooltip>
+      </Box>
     </React.Fragment>
   );
 };
