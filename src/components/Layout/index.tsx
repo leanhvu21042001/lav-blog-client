@@ -13,7 +13,7 @@ export const Layout = () => {
   return (
     <Box display="flex" flexDirection="column" height={{ lg: '100vh', sm: '100%' }} position="relative">
       <Header />
-      <Container maxW="container.md" as="main" mt="20">
+      <Container maxW="container.lg" as="main" mt="20">
         <AnimatedPage>
           <Outlet />
         </AnimatedPage>

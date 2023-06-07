@@ -27,9 +27,9 @@ const Portfolio: React.FC = () => {
       <Grid
         templateColumns={{ lg: '3fr 3fr', sm: '1fr' }}
         gap={10}
-        margin={{ sm: 'auto' }}
-        width={{ sm: 'fit-content' }}
-        textAlign={{ sm: 'center' }}
+        margin={{ sm: 'auto', lg: 0 }}
+        width={{ sm: 'fit-content', lg: 'initial' }}
+        textAlign={{ sm: 'center', lg: 'initial' }}
       >
         <GridItem>
           <Image borderRadius={25} src={authorPortfolio} />

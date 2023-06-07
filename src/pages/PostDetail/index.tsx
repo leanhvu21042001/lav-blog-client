@@ -30,7 +30,7 @@ const PostDetail = () => {
       <Heading as="h1">Hello</Heading>
       <Heading as="h2">{post?.title}</Heading>
       <PostTags tags={post?.tags} />
-      <Container maxW="container.md" as="main" mt="20">
+      <Container maxW="container.lg" as="main" mt="20">
         <Text>{post?.content}</Text>
       </Container>
     </Box>
