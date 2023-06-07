@@ -48,7 +48,7 @@ const Portfolio: React.FC = () => {
             <Typewriter text="Front-End Web Developer" delay={1} />
           </Text>
           {/* Social Links */}
-          <Box display="flex" gap={5} mt={10} justifyContent={{ sm: 'center' }}>
+          <Box display="flex" gap={5} mt={10} justifyContent={{ lg: 'left', sm: 'center' }}>
             <Tooltip label="Go to LinkedIn">
               <Link to="https://www.linkedin.com/in/lavdev/" target="_blank">
                 <Image src={linkIn} />
