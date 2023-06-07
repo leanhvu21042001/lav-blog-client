@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 
-import { BrowserRouter, createBrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 
 import { Layout } from 'src/components/Layout';
 
@@ -57,40 +57,6 @@ export const links = {
   },
 };
 
-export const router = createBrowserRouter([
-  {
-    path: links.root.path,
-    element: links.root.element,
-    errorElement: links.notFound.element,
-    children: [
-      {
-        path: links.root.portfolio.path,
-        element: links.root.portfolio.element,
-      },
-      {
-        path: links.root.projects.path,
-        element: links.root.projects.element,
-      },
-      {
-        path: links.root.blogs.path,
-        element: links.root.blogs.element,
-      },
-      {
-        path: links.root.post_detail.path,
-        element: links.root.post_detail.element,
-      },
-    ],
-  },
-  {
-    path: links.root.login.path,
-    element: links.root.login.element,
-  },
-  {
-    path: links.root.register.path,
-    element: links.root.register.element,
-  },
-]);
-
 export const BrowserRouterCustom = () => {
   return (
     <BrowserRouter>
@@ -106,13 +72,13 @@ export const RoutesCustom = () => {
     <AnimatePresence mode="wait">
       <Routes key={location.pathname} location={location}>
         <Route path="/" element={<Layout />}>
-          <Route path={links.root.portfolio.path} element={<Portfolio />} />
-          <Route path={links.root.projects.path} element={<Projects />} />
-          <Route path={links.root.blogs.path} element={<Posts />} />
-          <Route path={links.root.post_detail.path} element={<PostDetail />} />
-          <Route path={links.root.login.path} element={<Login />} />
-          <Route path={links.root.register.path} element={<Register />} />
-          <Route path={links.notFound.path} element={<PageNotFound />} />
+          <Route path={links.root.portfolio.path} element={links.root.portfolio.element} />
+          <Route path={links.root.projects.path} element={links.root.projects.element} />
+          <Route path={links.root.blogs.path} element={links.root.blogs.element} />
+          <Route path={links.root.post_detail.path} element={links.root.post_detail.element} />
+          <Route path={links.root.login.path} element={links.root.login.element} />
+          <Route path={links.root.register.path} element={links.root.register.element} />
+          <Route path={links.notFound.path} element={links.notFound.element} />
         </Route>
       </Routes>
     </AnimatePresence>

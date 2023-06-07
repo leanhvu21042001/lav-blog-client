@@ -31,12 +31,6 @@ const Desktop = () => {
       </BreadcrumbItem>
 
       <BreadcrumbItem>
-        <Button fontSize={20} fontWeight="bold" textTransform="uppercase" variant="ghost">
-          <NavLink to="#!">About</NavLink>
-        </Button>
-      </BreadcrumbItem>
-
-      <BreadcrumbItem>
         <Button onClick={toggleColorMode} variant="ghost">
           {colorMode === 'light' ? <Image width={5} src={dark} /> : <Image width={5} src={light} />}
         </Button>
