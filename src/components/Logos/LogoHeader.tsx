@@ -14,7 +14,7 @@ import { links } from 'src/routes/router';
 const LogoHeader: React.FC = () => {
   return (
     <Link to={links.root.portfolio.path}>
-      <Image src={lavLogo} w="100px" borderRadius={100} />
+      <Image src={lavLogo} w="150px" borderRadius={100} />
     </Link>
   );
 };
