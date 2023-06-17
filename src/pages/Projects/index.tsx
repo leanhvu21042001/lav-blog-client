@@ -1,4 +1,15 @@
-import { Box, Button, Card, CardBody, CardFooter, Heading, Image, Skeleton, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  Heading,
+  Image,
+  Skeleton,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
 import React from 'react';
 
 const Projects: React.FC = () => {
@@ -7,7 +18,11 @@ const Projects: React.FC = () => {
       <Heading>Coming soon...</Heading>
       <Box>
         <Skeleton>
-          <Card direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outline">
+          <Card
+            direction={{ base: 'column', sm: 'row' }}
+            overflow="hidden"
+            variant="outline"
+          >
             <Image
               objectFit="cover"
               maxW={{ base: '100%', sm: '200px' }}
@@ -20,7 +35,8 @@ const Projects: React.FC = () => {
                 <Heading size="md">The perfect latte</Heading>
 
                 <Text py="2">
-                  Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.
+                  Caffè latte is a coffee beverage of Italian origin made with
+                  espresso and steamed milk.
                 </Text>
               </CardBody>
 

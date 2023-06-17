@@ -9,7 +9,11 @@ export const useGetPosts = () => {
 };
 
 export const useGetPostBySlug = (slug: string) => {
-  return useFetch<IPostItem>(['get-post-by-slug', slug], () => PostService.getOneBySlug(slug), {
-    initialData: {} as IPostItem,
-  });
+  return useFetch<IPostItem>(
+    ['get-post-by-slug', slug],
+    () => PostService.getOneBySlug(slug),
+    {
+      initialData: {} as IPostItem,
+    },
+  );
 };

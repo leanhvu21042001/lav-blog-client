@@ -2,7 +2,15 @@
 import React from 'react';
 
 import { Field, Form, Formik } from 'formik';
-import { AbsoluteCenter, Box, Button, FormControl, FormErrorMessage, FormLabel, Input } from '@chakra-ui/react';
+import {
+  AbsoluteCenter,
+  Box,
+  Button,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+} from '@chakra-ui/react';
 
 function FormikExample() {
   function validateName(value: string) {
@@ -36,7 +44,12 @@ function FormikExample() {
               </FormControl>
             )}
           </Field>
-          <Button mt={4} colorScheme="teal" isLoading={props.isSubmitting} type="submit">
+          <Button
+            mt={4}
+            colorScheme="teal"
+            isLoading={props.isSubmitting}
+            type="submit"
+          >
             Submit
           </Button>
         </Form>

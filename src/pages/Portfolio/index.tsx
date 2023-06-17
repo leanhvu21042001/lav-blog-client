@@ -1,6 +1,14 @@
 import React from 'react';
 
-import { Box, Button, Grid, GridItem, Image, Text, Tooltip } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Grid,
+  GridItem,
+  Image,
+  Text,
+  Tooltip,
+} from '@chakra-ui/react';
 
 import { Link } from 'react-router-dom';
 import authorPortfolio from 'src/assets/images/portfolio/author-portfolio.png';
@@ -32,10 +40,15 @@ const Portfolio: React.FC = () => {
         textAlign={{ sm: 'center', lg: 'initial' }}
       >
         <GridItem>
-          <Image borderRadius={25} src={authorPortfolio} />
+          <Image
+            mx={{ sm: 'auto', md: 0, lg: 0 }}
+            height={{ sm: '400px', md: '500px', lg: '600px' }}
+            borderRadius={25}
+            src={authorPortfolio}
+          />
         </GridItem>
         <GridItem fontWeight="bold" mt={5} justifyContent={{ sm: 'center' }}>
-          <Box fontSize="36px">
+          <Box fontSize="4rem">
             <Text as="span">
               <Typewriter text="Hi, I'm " delay={1} />
             </Text>
@@ -44,33 +57,38 @@ const Portfolio: React.FC = () => {
             </Text>
           </Box>
 
-          <Text color="#BD6161" fontSize="26px">
+          <Text color="#BD6161" fontSize="3rem">
             <Typewriter text="Front-End Web Developer" delay={1} />
           </Text>
           {/* Social Links */}
-          <Box display="flex" gap={5} mt={10} justifyContent={{ lg: 'left', sm: 'center' }}>
+          <Box
+            display="flex"
+            gap={5}
+            mt={10}
+            justifyContent={{ lg: 'left', sm: 'center' }}
+          >
             <Tooltip label="Go to LinkedIn">
               <Link to="https://www.linkedin.com/in/lavdev/" target="_blank">
-                <Image src={linkIn} />
+                <Image height="70px" src={linkIn} />
               </Link>
             </Tooltip>
 
             <Tooltip label="Go to Github">
               <Link to="https://github.com/leanhvu21042001" target="_blank">
-                <Image src={github} />
+                <Image height="70px" src={github} />
               </Link>
             </Tooltip>
 
-            <Image src={facebook} />
+            <Image height="70px" src={facebook} />
           </Box>
           {/* Technical */}
 
           <Box display="flex" flexWrap="wrap" gap={5} mt={10}>
-            <Image src={html5} />
-            <Image src={sass} />
-            <Image src={javascript} />
-            <Image src={react} />
-            <Image src={nodejs} />
+            <Image height="70px" src={html5} />
+            <Image height="70px" src={sass} />
+            <Image height="70px" src={javascript} />
+            <Image height="70px" src={react} />
+            <Image height="70px" src={nodejs} />
 
             {/* <Image src={laravel} />
           <Image src={php} />
@@ -93,6 +111,10 @@ const Portfolio: React.FC = () => {
               background: 'white',
               color: 'teal.500',
             }}
+            size="lg"
+            fontSize="1.6rem"
+            padding="35px 40px"
+            borderRadius="12px"
           >
             <Link to="/CurriculumVitae_LeAnhVu.pdf" target="_blank">
               Curriculum Vitae

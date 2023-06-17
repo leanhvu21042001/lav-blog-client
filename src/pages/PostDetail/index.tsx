@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Container, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 
 import { PostTags } from 'src/components';
@@ -27,12 +27,12 @@ const PostDetail = () => {
     </Box>
   ) : (
     <Box id={post?.id}>
-      <Heading as="h1">Hello</Heading>
-      <Heading as="h2">{post?.title}</Heading>
+      {/* <Heading as="h1">Hello</Heading> */}
+      <Heading as="h2" fontSize="1.7rem">
+        {post?.title}
+      </Heading>
       <PostTags tags={post?.tags} />
-      <Container maxW="container.lg" as="main" mt="20">
-        <Text>{post?.content}</Text>
-      </Container>
+      <Text fontSize="1.5rem">{post?.content}</Text>
     </Box>
   );
 };

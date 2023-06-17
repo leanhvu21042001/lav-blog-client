@@ -15,7 +15,12 @@ const Footer: React.FC = () => {
       textAlign="center"
       padding={10}
     >
-      <Text fontSize={20} fontWeight="bold" color="#BD6161" textShadow="0px 1px 2px #000">
+      <Text
+        fontSize={20}
+        fontWeight="bold"
+        color="#BD6161"
+        textShadow="0px 1px 2px #000"
+      >
         LAV DEV
       </Text>
     </Box>

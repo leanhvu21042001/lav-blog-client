@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Box } from '@chakra-ui/react';
 
 import ListPosts from 'src/components/ListPosts';
-import SpinnerBox from 'src/components/SpinnerBox';
 import ModalSearch, { IResultSearch } from 'src/components/Modals/ModalSearch';
+import SpinnerBox from 'src/components/SpinnerBox';
 
 import { useGetPosts } from 'src/queries/post';
 import { links } from 'src/routes/router';
@@ -17,7 +17,9 @@ const Posts: React.FC = () => {
 
   const handleSearch = (query: string) => {
     const result: IResultSearch[] = posts
-      .filter(({ title }) => title.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
+      .filter(({ title }) =>
+        title.toLocaleLowerCase().includes(query.toLocaleLowerCase()),
+      )
       .map((post) => ({
         ...post,
         href: links.root.post_detail.extend_path(post.slug),

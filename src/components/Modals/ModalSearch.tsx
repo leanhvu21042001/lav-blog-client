@@ -1,13 +1,19 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
 import { Button } from '@chakra-ui/button';
 import { useDisclosure } from '@chakra-ui/hooks';
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalOverlay } from '@chakra-ui/modal';
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalOverlay,
+} from '@chakra-ui/modal';
+import { Link } from 'react-router-dom';
 
-import { AnimatedInputSearch } from '../Inputs';
 import { Divider, Heading, List, ListItem } from '@chakra-ui/react';
 import string from 'src/helpers/string';
+import { AnimatedInputSearch } from '../Inputs';
 
 export interface IResultSearch {
   href: string;
@@ -38,10 +44,19 @@ const ModalSearch: React.FC<{
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button onClick={onOpen} colorScheme="teal" mb={10}>
+      <Button
+        onClick={onOpen}
+        colorScheme="teal"
+        mb={10}
+        size="lg"
+        fontSize="1.8rem"
+        padding="35px 30px"
+        borderRadius="10px"
+        fontWeight="bold"
+      >
         Search
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} size="lg">
         <ModalOverlay />
         <ModalContent>
           <ModalBody>

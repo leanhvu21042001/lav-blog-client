@@ -11,7 +11,13 @@ export const AnimatedPage: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
   return (
-    <motion.div variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.5 }}>
+    <motion.div
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.5 }}
+    >
       {children}
     </motion.div>
   );

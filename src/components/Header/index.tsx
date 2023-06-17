@@ -6,7 +6,7 @@ import { LogoHeader } from 'src/components/Logos';
 import { Menu } from '../Menu';
 
 const Header = () => (
-  <Container maxW="container.lg" my={5} as="header">
+  <Container maxW="container.xl" my={10} px={0} as="header">
     <Flex
       w="100%"
       justifyContent="space-between"
@@ -16,7 +16,6 @@ const Header = () => (
       gap={5}
     >
       <LogoHeader />
-
       <Menu />
     </Flex>
   </Container>

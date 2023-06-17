@@ -9,7 +9,11 @@ const PasswordInput: React.FC = () => {
 
   return (
     <InputGroup size="md">
-      <Input pr="4.5rem" type={show ? 'text' : 'password'} placeholder="Enter password" />
+      <Input
+        pr="4.5rem"
+        type={show ? 'text' : 'password'}
+        placeholder="Enter password"
+      />
       <InputRightElement width="4.5rem">
         <Button h="1.75rem" size="sm" onClick={handleClick}>
           {show ? <ViewOffIcon /> : <ViewIcon />}
