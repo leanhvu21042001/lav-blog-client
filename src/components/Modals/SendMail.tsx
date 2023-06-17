@@ -34,6 +34,10 @@ const SendMail: React.FC = () => {
             color: 'teal.500',
           }}
           onClick={onOpen}
+          size="lg"
+          fontSize="1.6rem"
+          padding="35px 40px"
+          borderRadius="12px"
         >
           Contact me
         </Button>
@@ -48,8 +52,15 @@ const SendMail: React.FC = () => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Input mb={5} placeholder="Subject" onChange={({ target }) => setSubject(target.value)} />
-            <Textarea placeholder="Here is a sample placeholder" onChange={({ target }) => setBody(target.value)} />
+            <Input
+              mb={5}
+              placeholder="Subject"
+              onChange={({ target }) => setSubject(target.value)}
+            />
+            <Textarea
+              placeholder="Here is a sample placeholder"
+              onChange={({ target }) => setBody(target.value)}
+            />
           </ModalBody>
 
           <ModalFooter>
@@ -58,7 +69,9 @@ const SendMail: React.FC = () => {
             </Button>
 
             <Button colorScheme="green" color="white">
-              <a href={`mailto:${email}?subject=${subject}&body=${body}`}>Click to Send an Email</a>
+              <a href={`mailto:${email}?subject=${subject}&body=${body}`}>
+                Click to Send an Email
+              </a>
             </Button>
           </ModalFooter>
         </ModalContent>

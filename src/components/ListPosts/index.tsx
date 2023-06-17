@@ -15,18 +15,31 @@ export const PostTags: React.FC<{ tags: string }> = ({ tags }) => {
   const tagsMapped = tags.split(',').map((elm) => {
     const color = TAG_COLORS[random.getRandomIntInclusive(0, 3)];
     return (
-      <Tag key={elm} size="md" variant="solid" bg={color} color="#fff" mr={3}>
-        <TagLabel>{elm}</TagLabel>
+      <Tag
+        key={elm}
+        size="md"
+        variant="solid"
+        bg={color}
+        color="#fff"
+        mr={3}
+        padding="10px 15px"
+      >
+        <TagLabel fontSize="1.3rem">{elm}</TagLabel>
       </Tag>
     );
   });
   return <>{tagsMapped}</>;
 };
 
-export const PostItem: React.FC<IPostItem> = ({ title = '', content = '', tags = '', slug = '' }) => (
+export const PostItem: React.FC<IPostItem> = ({
+  title = '',
+  content = '',
+  tags = '',
+  slug = '',
+}) => (
   <Card align="center" mb={10}>
     <CardHeader>
-      <Heading size="md" as="h2" mb={5}>
+      <Heading size="md" as="h3" mb={5} fontSize="1.7rem">
         {title}
       </Heading>
 
@@ -35,10 +48,15 @@ export const PostItem: React.FC<IPostItem> = ({ title = '', content = '', tags =
       </Center>
     </CardHeader>
     <CardBody>
-      <Text>{string.makeShort(content, 20)}</Text>
+      <Text fontSize="1.7rem">{string.makeShort(content, 20)}</Text>
     </CardBody>
     <CardFooter>
-      <Button colorScheme="blue">
+      <Button
+        colorScheme="blue"
+        size="lg"
+        fontSize="1.6rem"
+        padding="30px 20px"
+      >
         <Link to={links.root.post_detail.extend_path(slug)}>See more...</Link>
       </Button>
     </CardFooter>
@@ -47,7 +65,14 @@ export const PostItem: React.FC<IPostItem> = ({ title = '', content = '', tags =
 
 const ListPosts: React.FC<{ posts: IPostItem[] }> = ({ posts = [] }) => {
   const postsElement = posts.map((post) => (
-    <PostItem key={post.id} id={post.id} title={post.title} content={post.content} tags={post.tags} slug={post.slug} />
+    <PostItem
+      key={post.id}
+      id={post.id}
+      title={post.title}
+      content={post.content}
+      tags={post.tags}
+      slug={post.slug}
+    />
   ));
 
   return <>{postsElement}</>;

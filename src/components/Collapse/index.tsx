@@ -15,7 +15,14 @@ export const Collapse: React.FC<{
     <>
       <Button onClick={onToggle}>{buttonContent}</Button>
       <ChakraUICollapse in={isOpen} animateOpacity>
-        <Box p="40px" color="white" mt="4" bg="teal.500" rounded="md" shadow="md">
+        <Box
+          p="40px"
+          color="white"
+          mt="4"
+          bg="teal.500"
+          rounded="md"
+          shadow="md"
+        >
           {children}
         </Box>
       </ChakraUICollapse>

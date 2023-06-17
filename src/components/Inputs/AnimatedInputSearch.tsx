@@ -1,11 +1,13 @@
 import React, { useCallback, useState } from 'react';
 
 import { SearchIcon } from '@chakra-ui/icons';
-import { Input, InputGroup, InputLeftElement, Box } from '@chakra-ui/react';
+import { Box, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { debounce } from 'lodash';
 import { DEBOUNCE_WAIT } from 'src/constants';
 
-const AnimatedInputSearch: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
+const AnimatedInputSearch: React.FC<{ onSearch: (query: string) => void }> = ({
+  onSearch,
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -32,14 +34,16 @@ const AnimatedInputSearch: React.FC<{ onSearch: (query: string) => void }> = ({ 
 
   return (
     <Box position="relative">
-      <InputGroup width="md">
-        <InputLeftElement pointerEvents="none">
-          <SearchIcon />
+      <InputGroup width="lg">
+        <InputLeftElement pointerEvents="none" mt="25px" ms="20px">
+          <SearchIcon height="35px" width="35px" />
         </InputLeftElement>
         <Input
           placeholder="Search..."
-          size="md"
+          size="lg"
+          fontSize="1.8rem"
           borderRadius="full"
+          padding="40px 80px"
           transition="width 0.4s ease"
           width={isExpanded ? '90%' : '50%'}
           onFocus={handleInputFocus}
